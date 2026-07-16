@@ -10,11 +10,11 @@ export default function Login() {
   const [password,setPassword]=useState('');
   const navigate=useNavigate();
 
-  let {loading,error,singIn}=useAuth();
+  let {loading,error,signIn}=useAuth();
 
   const signUserIn=async(e)=>{
     e.preventDefault();
-    const user=await singIn(email,password);
+    const user=await signIn(email,password);
     if(user){
       navigate('/');
     }
