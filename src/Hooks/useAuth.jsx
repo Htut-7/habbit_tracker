@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { db, auth } from "../Firebase/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 
 export default function useAuth() {
 
@@ -27,7 +27,39 @@ export default function useAuth() {
         }finally{
             setLoading(false);
         }
+    };
+
+    const signIn=async(email,password)=>{
+        try{
+            setLoading(true);
+            setError(null);
+            const res=await signInWithEmailAndPassword(auth,email,password);
+            
+            await updateDoc(doc(db,"users",res.user.uid),{
+                lastLogin: serverTimestamp(),
+            });
+            return res.user
+        }catch(error){
+            setError(error.message);
+            setLoading(false);
+        }finally{
+            setLoading(false);
+        }
+    };
+
+    const logOut=async()=>{
+        try{
+            setLoading(true);
+            setError(null);
+
+            await signOut(auth);
+            setLoading(false);
+
+        }catch(error){
+            setError(error.message);
+            setLoading(false);
+        }
     }
 
-  return {loading,error,signUp}
+  return {loading,error,signUp,signIn,logOut}
 }
