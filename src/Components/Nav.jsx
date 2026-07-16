@@ -2,11 +2,15 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../Css/Nav.css";
 import { FaSignOutAlt, FaUser } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
+import { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthContext";
 
 export default function Nav() {
 
     const {logOut}=useAuth();
     const navigate=useNavigate();
+
+    const {user}=useContext(AuthContext);
 
     const logUser=async(e)=>{
         e.preventDefault();
@@ -27,17 +31,17 @@ export default function Nav() {
             </div>
 
             <div className="nav-action">
-                <>
+                {!!user && <>
                     <Link to='/register'>Register</Link>
                     <Link to='/login'>Login</Link>
                     <Link to='/profile'>
                         <FaUser/>
                     </Link>
-                </>
-                <button type="button" onClick={logUser}>
+                </>}
+                {!user && <button type="button" onClick={logUser}>
                     <FaSignOutAlt/>
                     Logout
-                </button>
+                </button>}
             </div>
         </div>
     </div>
