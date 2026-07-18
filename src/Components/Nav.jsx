@@ -25,7 +25,7 @@ export default function Nav() {
 
             <div className="nav-links">
                 <NavLink to='/'>Home</NavLink>
-                <NavLink to='/habbit'>Habits</NavLink>
+                <NavLink to='/habbits'>Habits</NavLink>
                 <NavLink to='/progress'>Progress</NavLink>
                 <NavLink to='/about'>About</NavLink>
             </div>

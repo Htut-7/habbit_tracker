@@ -5,6 +5,8 @@ import {
 import Home from "../Pages/Home";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import Habbits from "../Pages/Habbits";
+import AddHabbits from "../Pages/AddHabbits";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
         {
             path: '/login',
             element: <Login/>
+        },
+        {
+          path: '/habbits',
+          element: <Habbits/>
+        },
+        {
+          path: '/habbits/addHabbits',
+          element: <AddHabbits/>
         }
     ]
   },

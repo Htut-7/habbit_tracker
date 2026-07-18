@@ -1,4 +1,5 @@
 import "../Css/Habbits.css";
+import { Link } from "react-router-dom";
 
 export default function Habbits() {
   return (
@@ -11,9 +12,9 @@ export default function Habbits() {
 
             <div className="habbits-action-container">
                 <div className="habbits-action">
-                    <button type="button">
+                    <Link to='/habbits/addHabbits'>
                         Add new Habbit
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
