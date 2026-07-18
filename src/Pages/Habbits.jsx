@@ -68,7 +68,7 @@ export default function Habbits() {
                         <FaTrash />
                       </button>
 
-                      <Link>
+                      <Link to={`/editHabbits/${h.id}`}>
                         <FaPencilAlt />
                       </Link>
                     </div>

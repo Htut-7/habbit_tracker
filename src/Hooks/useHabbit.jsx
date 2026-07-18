@@ -3,10 +3,11 @@ import {
   collection,
   deleteDoc,
   doc,
-  getDocs,
+  getDoc,
   onSnapshot,
   query,
   serverTimestamp,
+  updateDoc,
   where,
 } from "firebase/firestore";
 import { db, auth } from "../Firebase/firebase";
@@ -83,5 +84,48 @@ export default function useHabbit() {
     }
   };
 
-  return { loading, error, addHabbit, getHabbits, habbit, deleteHabbit };
+  const singleHabbit=async(id)=>{
+    try{
+        setLoading(true);
+        setError(null);
+
+        const snapShot=await getDoc(doc(db,"habbits",id));
+
+        if(snapShot.exists()){
+           return{
+             id:snapShot.id,
+            ...snapShot.data(),
+           }
+        }
+        return null;
+
+    }catch(error){
+        setError(error.message);
+        setLoading(false);
+    }
+  }
+
+  const editHabbit=async(id,name,goal,category,frequency,description)=>{
+    try{
+        setLoading(true);
+        setError(null);
+
+        await updateDoc(doc(db,"habbits",id),{
+            name,
+            goal,
+            category,
+            frequency,
+            description,
+            updatedAt:serverTimestamp(),
+        });
+
+    }catch(error){
+        setError(error.meessage);
+        setLoading(false);
+    }finally{
+        setLoading(false);
+    }
+  }
+
+  return { loading, error, addHabbit, getHabbits, habbit, deleteHabbit, editHabbit, singleHabbit };
 }

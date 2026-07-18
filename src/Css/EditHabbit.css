@@ -1,0 +1,111 @@
+.edit-habbit {
+  min-height: calc(100vh - 80px);
+  background: #f8fafc;
+  padding: 40px 20px;
+}
+
+.edit-habbit-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.edit-habbit-container h3 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.edit-habbit-container > p {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.edit-habbit-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.edit-habbit-form-container label {
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: -8px;
+}
+
+.edit-habbit-form-container input,
+.edit-habbit-form-container select,
+.edit-habbit-form-container textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s ease;
+  background: #fff;
+  color: #0f172a;
+  box-sizing: border-box;
+}
+
+.edit-habbit-form-container textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.edit-habbit-form-container input:focus,
+.edit-habbit-form-container select:focus,
+.edit-habbit-form-container textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.edit-habbit-error {
+  color: #dc2626;
+  font-weight: 600;
+  text-align: center;
+}
+
+.edit-habbit-form-btn {
+  margin-top: 10px;
+}
+
+.edit-habbit-form-btn button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.edit-habbit-form-btn button:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.edit-habbit-form-btn button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .edit-habbit {
+    padding: 20px 15px;
+  }
+
+  .edit-habbit-container {
+    padding: 25px;
+  }
+
+  .edit-habbit-container h3 {
+    font-size: 1.7rem;
+  }
+}
