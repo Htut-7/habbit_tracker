@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import useHabbit from "../Hooks/useHabbit";
 import { FaPencilAlt, FaPlus, FaTrash, FaRegSmileBeam } from "react-icons/fa";
 import { useEffect } from "react";
+import useComplete from "../Hooks/useComplete";
 
 export default function Habbits() {
   const { loading, error, getHabbits, habbit, deleteHabbit } = useHabbit();
+  const { addComplete } = useComplete();
 
   useEffect(() => {
     getHabbits();
@@ -14,6 +16,10 @@ export default function Habbits() {
   const deleteItem = async (e, id) => {
     e.preventDefault();
     await deleteHabbit(id);
+  };
+
+  const addItem = async (habbitId, name) => {
+    await addComplete(habbitId, name);
   };
 
   return (
@@ -39,7 +45,7 @@ export default function Habbits() {
           <div className="added-habbits-container">
             {habbit.length === 0 ? (
               <div className="empty-habbit">
-                 <FaRegSmileBeam className="empty-icon" />
+                <FaRegSmileBeam className="empty-icon" />
                 <h3>No Habbits Yet</h3>
                 <p>
                   You haven't created any habbits yet. Start building positive
@@ -61,16 +67,26 @@ export default function Habbits() {
                     </div>
 
                     <div className="habbit-action">
+                      <div className="action-icons">
+                        <button
+                          type="button"
+                          onClick={(e) => deleteItem(e, h.id)}
+                        >
+                          <FaTrash />
+                        </button>
+
+                        <Link to={`/editHabbits/${h.id}`}>
+                          <FaPencilAlt />
+                        </Link>
+                      </div>
+
                       <button
                         type="button"
-                        onClick={(e) => deleteItem(e, h.id)}
+                        className="complete-btn"
+                        onClick={() => addItem(h.id, h.name)}
                       >
-                        <FaTrash />
+                        Complete Today
                       </button>
-
-                      <Link to={`/editHabbits/${h.id}`}>
-                        <FaPencilAlt />
-                      </Link>
                     </div>
                   </div>
                 </div>

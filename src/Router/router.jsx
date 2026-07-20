@@ -8,6 +8,7 @@ import Login from "../Pages/Login";
 import Habbits from "../Pages/Habbits";
 import AddHabbits from "../Pages/AddHabbits";
 import EditHabbit from "../Pages/EditHabbit";
+import Progress from "../Pages/Progress";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         {
           path: '/editHabbits/:id',
           element: <EditHabbit/>
+        },
+        {
+          path: '/progress',
+          element: <Progress/>
         }
     ]
   },
