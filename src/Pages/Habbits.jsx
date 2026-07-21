@@ -2,16 +2,21 @@ import "../Css/Habbits.css";
 import { Link } from "react-router-dom";
 import useHabbit from "../Hooks/useHabbit";
 import { FaPencilAlt, FaPlus, FaTrash, FaRegSmileBeam } from "react-icons/fa";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import useComplete from "../Hooks/useComplete";
+import { AuthContext } from "../Contexts/AuthContext";
 
 export default function Habbits() {
   const { loading, error, getHabbits, habbit, deleteHabbit } = useHabbit();
   const { addComplete } = useComplete();
 
+  const { user }=useContext(AuthContext);
+
   useEffect(() => {
-    getHabbits();
-  }, []);
+    if(user){
+      getHabbits();
+    }
+  }, [user]);
 
   const deleteItem = async (e, id) => {
     e.preventDefault();

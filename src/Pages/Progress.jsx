@@ -2,12 +2,17 @@ import { useEffect } from "react";
 import "../Css/Progress.css";
 import useComplete from "../Hooks/useComplete";
 import useHabbit from "../Hooks/useHabbit";
+import { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthContext";
 
 export default function Progress() {
 
     const {loading,error,getComplete,completions, deleteComplete}=useComplete();
     const {getHabbits, habbit}=useHabbit();
     const today=new Date();
+
+    const { user }=useContext(AuthContext);
+
     const filterComplete=completions.filter((c)=>{
         const completedDate=c.completedAt?.toDate();
 
@@ -20,9 +25,11 @@ export default function Progress() {
     })
 
     useEffect(()=>{
-        getComplete();
-        getHabbits();
-    },[]);
+        if(user){
+            getComplete();
+            getHabbits();
+        }
+    },[user]);
 
     const deleteItem=async(e,id)=>{
         e.preventDefault();
