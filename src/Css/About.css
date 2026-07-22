@@ -1,0 +1,265 @@
+.about-page {
+  padding: 100px 20px 60px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.about-page-contaianer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-page-contaianer > h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.about-page-contaianer > p {
+  max-width: 700px;
+  margin: 0 auto 70px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-us-content-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.about-story {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+  transition: 0.3s ease;
+}
+
+.about-story:hover {
+  transform: translateY(-6px);
+}
+
+.about-story h3 {
+  color: #2563eb;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.about-story p {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.Offer-card,
+.Why-choose-us,
+.value-card,
+.quote-section {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 45px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+}
+
+.offer-card-container > h2,
+.why-choose-us-container > h3,
+.value-card-container > h3,
+.quote-section-container > h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 35px;
+}
+
+.offer-card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.offer {
+  padding: 30px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #dbeafe;
+  transition: 0.3s ease;
+}
+
+.offer:hover {
+  transform: translateY(-5px);
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.offer h3 {
+  color: #2563eb;
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+}
+
+.offer p {
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.why-choose-us-container p {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  color: #4b5563;
+  line-height: 1.9;
+}
+
+.value-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.value-card-container > h3 {
+  grid-column: 1 / -1;
+}
+
+.core-values {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid #dbeafe;
+  transition: 0.3s ease;
+}
+
+.core-values:hover {
+  transform: translateY(-5px);
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.core-values h3 {
+  color: #2563eb;
+  margin-bottom: 14px;
+}
+
+.core-values p {
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.quote-section {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #ffffff;
+}
+
+.quote-section-container {
+  text-align: center;
+}
+
+.quote-section-container h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.quote-section-container p {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 992px) {
+  .about-us-content-container,
+  .offer-grid,
+  .value-card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page-contaianer > h2 {
+    font-size: 2.3rem;
+  }
+
+  .Offer-card,
+  .Why-choose-us,
+  .value-card,
+  .quote-section,
+  .about-story {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 80px 16px 50px;
+  }
+
+  .about-page-contaianer > h2 {
+    font-size: 2rem;
+  }
+
+  .about-page-contaianer > p {
+    margin-bottom: 50px;
+    font-size: 1rem;
+  }
+
+  .offer-card-container > h2,
+  .why-choose-us-container > h3,
+  .value-card-container > h3,
+  .quote-section-container > h3 {
+    font-size: 1.7rem;
+  }
+
+  .about-story h3,
+  .offer h3,
+  .core-values h3 {
+    font-size: 1.2rem;
+  }
+
+  .Offer-card,
+  .Why-choose-us,
+  .value-card,
+  .quote-section,
+  .about-story {
+    padding: 25px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page-contaianer > h2 {
+    font-size: 1.7rem;
+  }
+
+  .offer-card-container > h2,
+  .why-choose-us-container > h3,
+  .value-card-container > h3,
+  .quote-section-container > h3 {
+    font-size: 1.5rem;
+  }
+
+  .Offer-card,
+  .Why-choose-us,
+  .value-card,
+  .quote-section,
+  .about-story,
+  .offer,
+  .core-values {
+    padding: 20px;
+  }
+
+  .about-us-content {
+    gap: 25px;
+  }
+}
