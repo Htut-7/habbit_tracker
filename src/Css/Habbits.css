@@ -247,6 +247,12 @@
   cursor: not-allowed;
 }
 
+.streak{
+    margin-top: 10px;
+    color: #f97316;
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .habbits {
     padding: 25px 15px;

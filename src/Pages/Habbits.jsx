@@ -8,13 +8,14 @@ import { AuthContext } from "../Contexts/AuthContext";
 
 export default function Habbits() {
   const { loading, error, getHabbits, habbit, deleteHabbit } = useHabbit();
-  const { addComplete } = useComplete();
+  const { addComplete, getCurrentStreak, getComplete, isCompletedToday } = useComplete();
 
   const { user }=useContext(AuthContext);
 
   useEffect(() => {
     if(user){
       getHabbits();
+      getComplete();
     }
   }, [user]);
 
@@ -26,6 +27,8 @@ export default function Habbits() {
   const addItem = async (habbitId, name) => {
     await addComplete(habbitId, name);
   };
+
+  
 
   return (
     <div className="habbits">
@@ -58,8 +61,11 @@ export default function Habbits() {
                 </p>
               </div>
             ) : (
-              habbit.map((h) => (
-                <div className="single-habbit" key={h.id}>
+              habbit.map((h)=>{
+                const streak=getCurrentStreak(h.id);
+                const CompletedToday=isCompletedToday(h.id)
+                return(
+                  <div className="single-habbit" key={h.id}>
                   <div className="habbit-info">
                     <h3>{h.name}</h3>
                     <p>{h.description}</p>
@@ -69,6 +75,9 @@ export default function Habbits() {
                       <span>{h.frequency}</span>
                       <span>{h.goal}</span>
                       <p>Added: {h.addedAt?.toDate().toLocaleDateString()}</p>
+                      <p className='streak'>
+                        Current Streak: {streak} {streak===1? "Day" : "Days"}
+                      </p>
                     </div>
 
                     <div className="habbit-action">
@@ -88,14 +97,16 @@ export default function Habbits() {
                       <button
                         type="button"
                         className="complete-btn"
+                        disabled={CompletedToday}
                         onClick={() => addItem(h.id, h.name)}
                       >
-                        Complete Today
+                       {CompletedToday ? "Completed Today" : "Complete Today"}
                       </button>
                     </div>
                   </div>
                 </div>
-              ))
+                )
+              })
             )}
           </div>
         </div>
