@@ -11,6 +11,7 @@ import EditHabbit from "../Pages/EditHabbit";
 import Progress from "../Pages/Progress";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
+import Profile from "../Pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
         {
           path: '/contact',
           element: <Contact/>
+        },
+        {
+          path: '/profile',
+          element: <Profile/>
         }
     ]
   },

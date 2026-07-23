@@ -108,16 +108,14 @@ export default function useComplete() {
 
   const getCurrentStreak = (habbitId) => {
     const habbitCompletion = completions
-      .filter((c) => c.habbitId === habbitId)
+      .filter((c) => c.habbitId === habbitId && c.completedAt)
       .sort((a, b) => b.completedAt.toDate() - a.completedAt.toDate());
 
-    const dates = habbitCompletion
-      .filter((c) => c.completedAt)
-      .map((c) => {
-        const date = c.completedAt.toDate();
-        date.setHours(0, 0, 0, 0);
-        return date;
-      });
+    const dates = habbitCompletion.map((c) => {
+      const date = c.completedAt.toDate();
+      date.setHours(0, 0, 0, 0);
+      return date;
+    });
 
     if (dates.length === 0) {
       return 0;
@@ -131,15 +129,18 @@ export default function useComplete() {
     }
 
     let streak = 1;
+
     for (let i = 1; i < dates.length; i++) {
       const previousDate = new Date(dates[i - 1]);
       previousDate.setDate(previousDate.getDate() - 1);
+
       if (dates[i].getTime() === previousDate.getTime()) {
         streak++;
       } else {
         break;
       }
     }
+
     return streak;
   };
 
@@ -154,7 +155,7 @@ export default function useComplete() {
       const date = c.completedAt.toDate();
       date.setHours(0, 0, 0, 0);
 
-      return date.getTime() === today.getTime;
+      return date.getTime() === today.getTime();
     });
   };
 

@@ -1,0 +1,116 @@
+.how-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.how-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.how-header {
+  max-width: 700px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.how-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 18px;
+}
+
+.how-header p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.how-card {
+  background: #f8fbff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 35px 30px;
+  transition: all 0.3s ease;
+}
+
+.how-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.how-number {
+  width: 60px;
+  height: 60px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.how-card h3 {
+  font-size: 1.4rem;
+  color: #1e293b;
+  margin-bottom: 14px;
+}
+
+.how-card p {
+  color: #64748b;
+  line-height: 1.8;
+}
+
+@media (max-width: 992px) {
+  .how-section {
+    padding: 80px 20px;
+  }
+
+  .how-header h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-header h2 {
+    font-size: 2rem;
+  }
+
+  .how-card {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-section {
+    padding: 70px 16px;
+  }
+
+  .how-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .how-number {
+    width: 55px;
+    height: 55px;
+    font-size: 1.1rem;
+  }
+
+  .how-card h3 {
+    font-size: 1.25rem;
+  }
+}

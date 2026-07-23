@@ -1,0 +1,139 @@
+.profile-page {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: #f8fbff;
+}
+
+.profile-page-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile-page-container h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.profile-page-container > p {
+  max-width: 600px;
+  margin: 0 auto 50px;
+  text-align: center;
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.profile-page-form {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+}
+
+.profile-page-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-page-form label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.profile-page-form input {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  outline: none;
+  font-size: 1rem;
+  color: #1e293b;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.profile-page-form input::placeholder {
+  color: #94a3b8;
+}
+
+.profile-page-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.profile-form-btn {
+  margin-top: 10px;
+}
+
+.profile-form-btn button {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-form-btn button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.profile-form-btn button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 80px 20px;
+  }
+
+  .profile-page-container h2 {
+    font-size: 2.2rem;
+  }
+
+  .profile-page-form {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 70px 16px;
+  }
+
+  .profile-page-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .profile-page-container > p {
+    font-size: 1rem;
+  }
+
+  .profile-page-form {
+    padding: 24px 20px;
+  }
+
+  .profile-page-form input {
+    padding: 14px 16px;
+  }
+
+  .profile-form-btn button {
+    padding: 14px;
+  }
+}
