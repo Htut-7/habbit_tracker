@@ -1,7 +1,11 @@
-import "../Css/Home.css";
+import Hero from "../Components/Hero";
+import Feature from "../Components/FeatureHabbits";
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <Hero/>
+      <Feature/>
+    </div>
   )
 }

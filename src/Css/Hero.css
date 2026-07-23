@@ -1,0 +1,131 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+  padding: 100px 20px;
+}
+
+.hero-section-contaier {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-content h2 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #1e3a8a;
+  margin-bottom: 24px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #64748b;
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+.hero-action {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hero-action a {
+  text-decoration: none;
+  padding: 15px 34px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero-action a:first-child {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+}
+
+.hero-action a:first-child:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+}
+
+.hero-action a:last-child {
+  background: #ffffff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.hero-action a:last-child:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: auto;
+    padding: 120px 20px 80px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-content h2 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    margin: 0 auto 40px;
+  }
+
+  .hero-action {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-action {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-action a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 100px 16px 60px;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+}
